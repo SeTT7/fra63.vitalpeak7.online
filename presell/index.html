@@ -1,129 +1,133 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="fr">
 <head>
-
-  
-
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="acceder al contenido">
-    <title>Contenido Exclusivo</title>
-
+    <meta name="description" content="accéder au contenu">
+    <title>Exclusive Content</title>
+    
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Arial', sans-serif;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: black;
-            padding: 20px;
-            line-height: 1.5;
-        }
+    body {
+        font-family: 'Arial', sans-serif;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #ffffff;
+        padding: 20px;
+        line-height: 1.5;
+    }
 
-        .age-verification-container {
-            text-align: center;
-            max-width: 400px;
-            width: 100%;
-            animation: fadeIn 0.5s ease-in-out;
-        }
+    .age-verification-container {
+        text-align: center;
+        max-width: 420px;
+        width: 100%;
+        animation: fadeIn 0.5s ease-in-out;
+    }
 
-        .verification-title {
-            color: #cc0000;
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            line-height: 1.3;
-        }
+    .verification-title {
+        color: #000000;
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
 
-        .verification-instruction {
-            color: white;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 30px;
-            line-height: 1.4;
-        }
+    .verification-instruction {
+        color: #333333;
+        font-size: 21px;
+        font-weight: 600; /* mais forte */
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
 
-        .primary-button, 
-        #verification-cta-button {
-            background-color: #cc0000;
-            color: white;
-            border: none;
-            padding: 12px 40px;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            display: inline-block;
-            margin-top: 15px;
-            text-decoration: none;
-        }
+    .quote-author {
+        display: block;
+        margin-top: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #777777;
+    }
 
-        .primary-button:hover, 
-        #verification-cta-button:hover {
-            background-color: #b30000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .primary-button {
+        background-color: #28a745;
+        color: #ffffff;
+        border: none;
+        padding: 14px 45px;
+        font-size: 18px;
+        font-weight: bold;
+        cursor: pointer;
+        border-radius: 8px;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        display: inline-block;
+        margin-top: 25px;
+        text-decoration: none;
+    }
 
-        .cta-button-container {
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: center;
-            padding: 20px;
-        }
+    .primary-button:hover {
+        background-color: #218838;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
 
-        @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(10px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
+    .cta-button-container {
+        margin-top: 10px;
+    }
+
+    @keyframes fadeIn {
+        from { 
+            opacity: 0; 
+            transform: translateY(10px); 
         }
-    </style>
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+</style>
 </head>
+
 <body>
 
-    <main class="age-verification-container">
-        <h1 class="verification-title">Acceso a Contenido Exclusivo:</h1>
-        <p class="verification-instruction">
-            Haz clic en el botón de abajo para ver el video explicativo
-        </p>
+<main class="age-verification-container">
+    <h1 class="verification-title">Access to Content:</h1>
 
-        <div class="cta-button-container"> 
-            <a href="https://fra48.lifegoodfr.online/pv" id="verification-cta-button" class="primary-button">
-                VER EL VIDEO
-            </a>
-        </div>
-    </main>
+    <p class="verification-instruction">
+        "This has already helped thousands of women."
+        <span class="quote-author">– Jennifer A.</span>
+    </p>
+    
+    <div class="cta-button-container"> 
+        <a href="#" id="verification-cta-button" class="primary-button">
+            WATCH NOW
+        </a>
+    </div>
+</main>
 
-    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async defer></script>
+<script>
+document.getElementById("verification-cta-button")
+  .addEventListener("click", async function(e) {
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function collectUrlParameters(url) {
-                const urlObj = new URL(url);
-                let paramString = "";
+    e.preventDefault();
 
-                urlObj.searchParams.forEach((value, key) => {
-                    paramString += `${paramString ? '&' : ''}${key}=${value}`;
-                });
+    const response = await fetch(
+      "https://fra63vitalpeaklink.endersonset11.workers.dev/",
+      { method: "POST" }
+    );
 
-                return paramString;
-            }
+    if (response.redirected) {
+      window.location.href = response.url;
+    }
+});
+</script>
 
-            const urlParams = collectUrlParameters(window.location.href);
-
-            if (urlParams) {
-                document.querySelectorAll("a").for
+</body>
+</html>
