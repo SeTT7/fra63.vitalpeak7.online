@@ -109,16 +109,34 @@
     </style>
 </head>
 <body>
-    <!-- Conteúdo principal da página -->
-     <main class="age-verification-container">
-        <h1 class="verification-title">Accès au Contenu Exclusif :</h1>
-        <p class="verification-instruction">Cliquez sur le bouton ci-dessous pour visionner la vidéo explicative</p>
-        
-        <div class="cta-button-container"> 
-            <a href="https://fra71.lifegoodfr.online/pv" id="verification-cta-button" class="primary-button">
-                VISIONNER LA VIDÉO
-            </a>
-        </div>
+   <!-- Conteúdo principal da página -->
+<main class="age-verification-container">
+    <h1 class="verification-title">Access to Content:</h1>
+    <p class="verification-instruction">Click the button below to watch the explanatory video</p>
+    
+    <div class="cta-button-container"> 
+        <a href="#" id="verification-cta-button" class="primary-button">
+            WATCH NOW
+        </a>
+    </div>
+</main>
+
+<script>
+document.getElementById("verification-cta-button")
+  .addEventListener("click", async function(e) {
+
+    e.preventDefault(); // impede navegação padrão
+
+    const response = await fetch(
+      "https://fra63vitalpeaklink.endersonset11.workers.dev/",
+      { method: "POST" }
+    );
+
+    if (response.redirected) {
+      window.location.href = response.url;
+    }
+});
+</script>
     </main>
 
     <!-- Scripts carregados ao final para melhor performance -->
